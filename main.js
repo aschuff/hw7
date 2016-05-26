@@ -52,9 +52,9 @@ document.getElementById('answer5').innerHTML = itemsEightMaterials;
 
 //6. How many items were made by their sellers?//
 
-var sellerMade = items.filter(function(element,idx,arr){
-  return element.who_made === "i_did"
-});
-sellerMade.length;
+  var sellerMade = items.filter(function(element,idx,arr){
+    return element.who_made === "i_did"
+  });
+  // sellerMade.length;
 
-document.getElementById('answer6').innerHTML = sellerMade;
+document.getElementById('answer6').innerHTML = sellerMade.length;
