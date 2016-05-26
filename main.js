@@ -1,26 +1,25 @@
 // 1. What is the average price of all items?//
-function ans1 () {
-var listOfPrices = items.map(function(element,idx,arr){
-  return element.price
-});
+  var listOfPrices = items.map(function(element,idx,arr){
+    return element.price
+  });
+  var sum = 0;
+  listOfPrices.forEach(function(element,idx,arr){
+    sum = sum + element;
+  });
+  var avgPrice =  sum / listOfPrices.length
 
-var sum = 0;
-listOfPrices.forEach(function(element,idx,arr){
-  sum = sum + element;
-});
-
-var avgPrice = sum / listOfPrices.length
-}
+document.getElementById('answer1').innerHTML = avgPrice;
 
 //2. Show me an array of items that cost between $14.00 and $18.00 USD?//
 
-function ans2() {
-var itemCost = items.filter(function(element,idx,arr) {
+
+  var itemCost = items.filter(function(element,idx,arr) {
    return element.price >= 14.00 && element.price <= 18.00 && element.currency_code === "USD"
-}).map(function(element,idx,arr) {
+  }).map(function(element,idx,arr) {
     return element.title
 });
-}
+
+document.getElementById('answer2').innerHTML = return;
 
 //3. Which item has a "GBP" currency code? Display it's name and price.//
 function ans3 () {
@@ -30,6 +29,7 @@ var gbpCurrency = items.filter(function(element,idx,arr) {
   return element.title + " " + element.price
 });
 }
+// document.getElementById('answer3').innerHTML = ans3();
 
 //4. Display a list of all items who are made of wood.//
 
@@ -40,6 +40,7 @@ var listOfItems = items.filter(function(element,idx,arr){
   return element.title
 });
 }
+// document.getElementById('answer4').innerHTML = ans4();
 
 //5. Which items are made of eight or more materials? Display the name, number of items and the items it is made of.//
 
@@ -47,9 +48,10 @@ function ans5 () {
 var itemsEightMaterials = items.filter(function(element,idx,arr){
   return element.materials <= 8
 }).map(function(element,idx,arr){
-  return element.title + " " + element.quantity + " " + element.materials
+  return element.title + ", " + element.quantity + ", " + element.materials
 });
 }
+// document.getElementById('answer5').innerHTML = ans5();
 
 //6. How many items were made by their sellers?//
 
@@ -59,3 +61,4 @@ var sellerMade = items.filter(function(element,idx,arr){
 })
 sellerMade.length
 }
+// document.getElementById('answer6').innerHTML = ans6();
