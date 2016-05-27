@@ -25,7 +25,7 @@ document.getElementById('answer2').innerHTML = itemCost;
 var gbpCurrency = items.filter(function(element,idx,arr) {
   return element.currency_code === "GBP"
 }).map(function(element,idx,arr) {
-  return element.title + " " + element.price
+  return element.title + ", Cost: " + element.price
 });
 
 document.getElementById('answer3').innerHTML = gbpCurrency;
@@ -45,7 +45,7 @@ document.getElementById('answer4').innerHTML = listOfItems;
 var itemsEightMaterials = items.filter(function(element,idx,arr){
   return element.materials.length >= 8
 }).map(function(element,idx,arr){
-  return element.title + ", " + element.quantity + ", " + element.materials
+  return "Title: " + element.title + ", Quantity: " + element.quantity + ", Materials: " + element.materials
 });
 
 document.getElementById('answer5').innerHTML = itemsEightMaterials;
