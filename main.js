@@ -43,7 +43,7 @@ document.getElementById('answer4').innerHTML = listOfItems;
 //5. Which items are made of eight or more materials? Display the name, number of items and the items it is made of.//
 
 var itemsEightMaterials = items.filter(function(element,idx,arr){
-  return element.materials <= 8
+  return element.materials.length >= 8
 }).map(function(element,idx,arr){
   return element.title + ", " + element.quantity + ", " + element.materials
 });
@@ -55,6 +55,5 @@ document.getElementById('answer5').innerHTML = itemsEightMaterials;
   var sellerMade = items.filter(function(element,idx,arr){
     return element.who_made === "i_did"
   });
-  // sellerMade.length;
 
 document.getElementById('answer6').innerHTML = sellerMade.length;
